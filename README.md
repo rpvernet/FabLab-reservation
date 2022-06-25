@@ -1,17 +1,5 @@
-# Instructions
+# Fab Lab reservation system
 
-## Environnement npm
+Most reservation systems handle one parameter. This system was designed to be able to handle availability of the equipment and the staff before allowing a reservation. This is handled by a point system with reservation type fully configurable without hardcode. The deploy method was Docker. 
 
-Le dossier pour les modules npm est dans le gitignore. Il faut donc les télécharger. Pour ce faire: 
-
-Se rendre dans le dossier des fichiers statiques:
-
-```cd Fab-Lab-Reservations/Fablab/static```
-
-Télécharger le dossier node_modules: 
-
-```npm install```
-
-Pour modifier les fichiers sass, utiliser la commande: 
-
-```npm run compile:css:watch```
+This project is here only for portfolio reason and was finished coded in 2021. If somehow you want to use it, the dependencies will need to be updated. A basic Django's .env file will need to be added.
