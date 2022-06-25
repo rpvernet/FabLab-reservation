@@ -1,0 +1,32 @@
+{% load static %}
+<div class="fablabnavbar">
+  <span class="fablabnavbar__link fablabnavbar__link__menu hidden-js">Menu Fab Lab<i class="material-icons">
+    keyboard_arrow_down
+    </i></span>
+  <ul class="fablabnavbar__links">
+    <div class="fablabnavbar__dropdown">
+      <li class="fablabnavbar__link fablabnavbar__dropdown__button">Réserver<i class="material-icons">
+        keyboard_arrow_down
+        </i></li>
+      <div class="fablabnavbar__dropdown__items">
+        {% for machine in machines_nav %}
+        <a href="{% url 'reservations' %}{{ machine.id }}">{{ machine.name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <li><a href="{% url 'machines' %}" class="fablabnavbar__link">Machines</a></li>
+
+    {% if user.is_authenticated %}
+    <li><a href="{% url 'dashboard' %}" class="fablabnavbar__link">Tableau de bord</a></li>
+    <li><a href="javascript:{document.getElementById('logout').submit()}" class="fablabnavbar__link">Déconnexion</a>
+      <form action="{% url 'logout' %}" method="POST" id="logout">
+        {% csrf_token %}
+        <input type="hidden">
+      </form>
+    </li>
+    {% else %}
+    <li><a href="{% url 'login' %}" class="fablabnavbar__link">Connexion</a></li>
+    <li><a href="{% url 'register' %}" class="fablabnavbar__link">Inscription</a></li>
+    {% endif %}
+  </ul>
+</div>

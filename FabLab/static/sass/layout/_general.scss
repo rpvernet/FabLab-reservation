@@ -1,0 +1,66 @@
+// Footer stay at bottom
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+// Fin footer stay at bottom
+
+.container {
+    width: 100%;
+    background-color: $gray;
+}
+ 
+.content {
+    padding: .5rem;
+    width: 100%;
+
+    &__block {
+        background-color: $white;
+        margin: 2rem;
+        padding: 2rem;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+        min-height: 60vh; // S'assure d'avoir le fond gris sur toute la hauteur du container 
+
+        &__sides {
+            //FIXME: Régler la largeur pour que les sides prennent 100% de la viewwidth comme pour la page register
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 1130px) {
+    .container {
+        margin-top: 10rem;
+        z-index: 1;
+    }
+
+    .content__block {
+        &__sides {
+            flex-direction: column;
+        }
+    }
+}

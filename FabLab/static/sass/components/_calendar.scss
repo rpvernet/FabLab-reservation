@@ -1,0 +1,89 @@
+.calendar_title{
+  font: 2.5rem "Poppins", sans-serif;
+  color: #000000;
+  font-weight: 600;
+  line-height: 4rem;
+  overflow: hidden;
+  border-bottom: lightgrey 1px solid;
+
+
+}
+
+.machine_day {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width : 600px;
+  text-align: center;
+  border-bottom: lightgrey 1px solid;
+}
+
+.calendar_page{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: #FFFFFF;
+  margin: .5rem;
+  padding: 30px;
+}
+
+.hour_day {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width : 150px;
+  border-bottom: lightgrey 1px solid;
+  text-align: center;
+
+}
+.reservation_hour {
+  display: flex;
+  flex-direction: column;
+  flex-wrap:nowrap;
+  border-bottom: 1px;
+  border-top: 1px;
+  border-style: solid;
+  border-color: lightgrey;
+  padding: 10px;
+
+
+}
+.reservation_taken {
+  display: flex;
+  flex-direction: column;
+  flex-wrap:nowrap;
+  border-left: #3875d7 10px solid;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  padding: 10px;
+  background-color: $blue;
+  color:#FFFFFF;
+  text-align: left;
+
+}
+
+.reservation_taken_first {
+  display: flex;
+  flex-direction: column;
+  flex-wrap:nowrap;
+  border-left: #3875d7 10px solid;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  padding: 10px;
+  background-color: $blue;
+  color:#FFFFFF;
+  text-align: left;
+
+}
+
+.reservation_free {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border-bottom: 1px;
+  border-top: 1px;
+  border-style: solid;
+  border-color: lightgrey;
+  padding: 10px;
+
+}

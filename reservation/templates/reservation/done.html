@@ -1,0 +1,21 @@
+{%  extends 'base.html' %}
+{% block content %}
+<div class="content">
+    <div class="content__block">
+        <h2 class="title-2">Votre réservation</h2>
+        {% include '_alerts.html' %}
+        <div class="cards">
+    <div class="card">
+            <div class="card__content">
+                <h5 class="card__content__title">{{ machine.name }}</h5>
+                <p class="card__content__text">{{ date | date:"D d M Y" }}</p>
+                <p class="card__content__text">{{ starting_hours | time:"G:i" }} - {{ finishing_hours | time:"G:i" }}
+                </p>
+                <a href="{% url 'index' %}" class="btn">Retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

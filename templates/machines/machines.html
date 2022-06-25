@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content">
+        <div class="content__block">
+            <h1 class="title-1">Machines</h1>
+            <div class="cards__large">
+                {% for machine in machines %}
+                <div class="card__large">
+                    <div class="card__content">
+                        <h5 class="card__content__title">{{ machine.name }}</h5>
+                        <img class="card__content__image" src="{{ machine.image.url }}" title="{{machine.name}}">
+                        <p class="card__content__text">{{ machine.description }}</p>
+                        <p class="card__content__price"><strong>Prix membre :</strong>{{ machine.member_price}} </p>
+                        <p class="card__content__price"><strong>Prix non-membre :</strong> {{ machine.no_member_price }}</p>
+                        <div class="card__content__down"><a href="{%  url 'reservations' %}{{ machine.id }}" class="golink btn">Réserver cette machine</a></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>  
+        </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{%  extends 'base.html' %}
+{% block content %}
+<div class="content">
+
+  <div class="content__block">
+    <h2 class="title-2">Choisissez le moment qui vous convient dans les heures disponibles: </h2>
+    <div class='cards center'>
+      {% for spot in available_spots %}
+      <div class="card">
+        <!--<img src="..." class="card-img-top" alt="..."> -->
+        <div class="card__content">
+          <h5 class="card__content__title">{{ machine.name }}</h5>
+          <p class="card__content__text">{{ spot.start|date:"D d M Y"}}</p>
+          <p class="card__content__text">{{ spot.start|time:"G:i" }} - {{ spot.end|time:"G:i" }}</p>
+          <form action="{% url 'reservation_done' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="machine" value="{{ machine.id }}">
+            <input type="hidden" name="date" value="{{ spot.date }}">
+            <input type="hidden" name="start_time" value="{{ spot.start|date:"Y-m-d G:i"}}">
+            <input type="hidden" name="end_time" value="{{ spot.end|date:"Y-m-d G:i"}}">
+            <input type="hidden" name="staff_point" value="{{ spot.staff_point }}">
+            <input type="hidden" name="type_reservation" value="{{ spot.type_reservation }}">
+            <button type="submit" class="btn">Réserver</button>
+          </form>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

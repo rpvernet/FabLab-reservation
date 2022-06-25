@@ -1,0 +1,30 @@
+.burger__container {
+  width: 100px; }
+
+.burger {
+  cursor: pointer;
+  display: block; }
+
+.burger span {
+  /* Dimensions du burger */
+  background: #eee;
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin-bottom: 5px;
+  position: relative;
+  top: 0;
+  transition: all ease-in-out 0.4s; }
+
+/* Animation de l'icone */
+.burger__container.open span:nth-child(2) {
+  width: 0;
+  opacity: 0; }
+
+.burger__container.open span:nth-child(3) {
+  transform: rotate(45deg);
+  top: -10px; }
+
+.burger__container.open span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 10px; }

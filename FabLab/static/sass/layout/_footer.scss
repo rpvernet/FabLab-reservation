@@ -1,0 +1,108 @@
+.footer {
+    box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.1);
+    padding-bottom: 3rem;
+
+    
+        &__social {
+            display: flex;
+            align-items: flex-end;
+            margin-left: auto;
+            width: 60%;
+    
+        }
+    
+        &__logo {
+            width: 210px;
+            height: 34px;
+        }
+    
+        &__partner {
+            width: 60rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+    
+            &__logo {
+                max-width: 8rem;
+            }
+    
+        }
+    
+        &__media {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+                &__social {
+                    display: flex;
+                    &__appel {
+                        margin-top: 1.5rem;
+                    }
+                }
+        }
+    
+        &__nav {
+    
+            &__items {
+                margin-top: 1rem;
+                line-height: 3rem;
+            }
+    
+            &__link {
+                font: 1.4rem 'Roboto', sans-serif;
+                color: $black;
+                text-decoration: none;
+    
+                &:hover {
+                    color: $blue;
+                    text-decoration: underline;
+                }
+            }
+        }
+    
+        &__copyright {
+    
+            margin-top: 2rem;
+            margin-left: 5rem;
+
+            p {
+                font: 1.4rem "Roboto", sans-serif;
+    
+            }
+        }
+
+        &__content {
+            display: flex; 
+            width: 100%;
+            padding-left: 5rem;
+            padding-top: 2rem;
+        
+        }
+    }
+
+    @media only screen and (max-width: 1130px) {
+        .footer {
+            &__social {
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                margin-left: 0;
+                width: 100%;
+            }
+
+            &__content {
+                flex-direction: column;
+                align-items: center;
+                padding-left: 0;
+            }
+
+            &__partner {
+                width: 100%; 
+            }
+
+            &__copyright {
+                text-align: center;
+                margin-left: 0;
+            }
+        }
+     }

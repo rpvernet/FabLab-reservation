@@ -1,0 +1,26 @@
+{%  extends 'base.html' %}
+{% block content %}
+
+<div class="content">
+  <div class="content__block">
+    <h1 class="title-1">Réservation</h1>
+    <h2 class="title-2">Choisissez le moment de votre réservation</h2>
+    <p>{{ machine.1 }}</p> <!-- Nom de la machine -->
+    <p>{{ machine.0 }}</p>  <!-- Badges -->
+{% include '_alerts.html' %}
+<form class="form" method="POST" data-durations-url="{% url 'ajax_load_durations' %}">
+  <div class="form__group-select">
+    {% csrf_token %}
+      {% for field in form %}
+      {{ field.label_tag }} 
+        <div class="form__list">
+          {{ field }}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn">Envoyer</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% load static %}
+
+<div class="supnavbar">
+    <a href="https://www.brossard.ca/" class="supnavbar__logo"><img src="{% static 'images/logoBrossardBlanc.png' %}"
+            alt="Logo Brossard" class="supnavbar__logo__img"></a>
+    <!-- <p class="supnavbar__text">Version Bêta du site de la Bibliothèque Georgette-Lepage. </p> -->
+    <div class="supnavbar__icons">
+        <a href=""> <i class="fas fa-search"></i></a>
+        <a href=""> <i class="material-icons">text_fields</i></a>
+        <a href=""> <i class="material-icons">language</i></a>
+    </div>
+    <div class="supnavbar__folder" onclick="location.href='https://bibliotheque.brossard.ca/account';">
+        <i class="material-icons">account_circle</i>
+        <p class="supnavbar__folder__text">Mon dossier</p>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+}
+
+a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+}
+
+* {
+    &::selection {
+        background-color: $blue;
+        color: $white;
+    }
+}
+
+.paragraph {
+    font: 1.6rem 'Roboto', sans-serif;
+    color: $black;
+    line-height: 2.3rem;
+
+    &__list {
+        list-style: circle;
+        margin-left: 4rem;
+
+        &:first-child {
+            margin-top: 1rem;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+
+    }
+
+    & strong {
+        font-weight: bold;
+    }
+
+}
+
+.title {
+    &-1 {
+        font: 3.6rem 'Poppins', sans-serif;
+        color: $black;
+        font-weight: 600; // semi-bold
+        line-height: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    &-2 {
+        font: 2rem 'Poppins', sans-serif;
+        margin-bottom: 1rem;
+    }
+}

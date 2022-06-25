@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    <div class="content__block__sides">
+<div class="content__block">
+    <h2 class="title-1">Inscription</h2>
+    <p class="paragraph">Vous pouvez vous inscrire gratuitement sur la plateforme de réservation du Fab Lab, sans posséder nécessairement de cartes de bibliothèque. Notez cependant que ceux qui ne possèdent pas la carte de la bibliothèque de Brossard devront payer des frais supplémentaires pour l'utilisation de certaines machines et l'achat de consommables. </p>
+    <p class="paragraph">Vous possédez déjà un compte ? Allez sur la page de <a href="{% url 'login' %}">connexion</a>.</p>
+</div>
+<div class="content__block">
+    {% include '_alerts.html' %}
+    <h2 class="title-2">Inscription</h2>
+    <form method="POST" action="{% url 'register' %}" class="form">
+        {% csrf_token %}
+       <div class="form__group">
+            {{ registerForm.first_name }}
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            {{ registerForm.first_name.label_tag }}
+        </div>
+
+        <div class="form__group">
+            {{ registerForm.last_name }}
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            {{ registerForm.last_name.label_tag }}
+        </div>
+
+        <div class="form__group">
+            {{ registerForm.username }}
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            {{ registerForm.username.label_tag }}
+        </div>
+
+        <div class="form__group">
+            {{ registerForm.email }}
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            {{ registerForm.email.label_tag }}
+        </div>
+
+        <div class="form__group">
+            {{ registerForm.password }}
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            {{ registerForm.password.label_tag }}
+        </div>
+
+        <div class="form__group">
+            {{ registerForm.password_conf }}
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            {{ registerForm.password_conf.label_tag }}
+        </div>
+
+        <button type="submit" class="btn ">S'inscrire</button>
+
+    </form>
+</div>
+    </div>
+</div>
+{% endblock %}

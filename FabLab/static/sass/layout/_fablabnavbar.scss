@@ -1,0 +1,172 @@
+.fablabnavbar {
+    display: flex;
+    flex-direction: column;
+    background-color: $black;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    &__logo {
+        margin-left: 7rem;
+        width: 210px;
+        height: 34px;
+    }
+
+    &__links {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 40%;
+    }
+
+    &__link {
+        font: 1.6rem 'Poppins', sans-serif;
+        color: $white;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: .2s;
+
+        &:hover {
+            color: $blue;
+        }
+
+        &__menu {}
+    }
+
+    &__dropdown {
+
+        &__button {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        &__items {
+            position: absolute;
+            display: none;
+            background-color: $black;
+            box-shadow: none;
+            z-index: 1;
+            padding: 2rem;
+            margin-top: 1rem;
+
+            a {
+                font: 1.6rem 'Roboto', sans-serif;
+                line-height: 1.3rem;
+                text-decoration: none;
+                color: $white;
+                display: block;
+                position: relative;
+                transition: .2s;
+                text-transform: uppercase;
+
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
+
+                &:hover {
+                    background-color: $black;
+                    color: $blue;
+                }
+
+                &:not(:last-child):after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.hidden-js {
+    // masquer Menu pour le menu du Fab Lab quand le site est desktop
+    display: none;
+}
+
+@media only screen and (max-width: 1130px) {
+    .hidden-js {
+        display: inline;
+    }
+
+    .fablabnavbar {
+        align-items: flex-start;
+        padding-left: 3rem;
+        position: fixed;
+        width: 100%;
+        top: 5rem;
+        z-index: 5;
+
+        &__link {
+
+            &__menu {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                & i {
+                    display: inline-block;
+                    margin-left: auto;
+                }
+            }
+        }
+
+        &__links {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+
+
+            & li:not(:last-child) {
+                margin-bottom: 2rem;
+
+                &:first-child {
+                    margin-top: 2rem;
+                }
+            }
+        }
+
+        &__dropdown {
+            transition: .4s;
+
+            &__button {
+                display: flex;
+                align-items: center;
+            }
+
+            &__items {
+                position: relative;
+                display: none;
+                background-color: $black;
+                box-shadow: none;
+                width: 100%;
+                padding: 0;
+                padding-left: 2rem;
+
+                a {
+                    font: 1.6rem 'Roboto', sans-serif;
+                    line-height: 1.3rem;
+                    text-decoration: none;
+                    color: $white;
+                    display: block;
+                    position: relative;
+                    transition: .2s;
+                    margin-bottom: 2rem;
+                    text-transform: uppercase;
+
+
+                    &:hover {
+                        background-color: $black;
+                        color: $blue;
+                    }
+
+                    &:not(:last-child):after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

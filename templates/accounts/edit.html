@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    <div class="content__block">
+        <h2 class="title-2">Inscription</h2>
+        {% include '_alerts.html' %}
+        <form method="POST" action="{% url 'edit' %}" class="form">
+            {% csrf_token %}
+           <div class="form__group">
+                {{ registerForm.first_name }}
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                {{ registerForm.first_name.label_tag }}
+            </div>
+
+            <div class="form__group">
+                {{ registerForm.last_name }}
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                {{ registerForm.last_name.label_tag }}
+            </div>
+
+            <div class="form__group">
+                {{ registerForm.username }}
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                {{ registerForm.username.label_tag }}
+            </div>
+
+            <div class="form__group">
+                {{ registerForm.email }}
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                {{ registerForm.email.label_tag }}
+            </div>
+
+
+
+            <button type="submit" class="btn ">Modifier les informations</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+.footer__media a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border: 1px solid $blue;
+	border-radius: 100%;
+	margin-right: 7px;
+	transition: .2s;
+	color: $blue;
+	text-decoration: none;
+
+	&:hover {
+		background-color: $blue;
+		color: $white
+	}
+}

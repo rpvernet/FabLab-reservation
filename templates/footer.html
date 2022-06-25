@@ -1,0 +1,47 @@
+{% load static %}
+
+<footer class="footer">
+<div class="footer__content">
+    <nav class="footer__nav">
+        <img class="footer__logo" src="{% static 'images/logo.jpg' %}" alt="Logo de la ville">
+        <ul class="footer__nav__items">
+            <li class="footer__nav__item"><a
+                    href="https://bibliotheque.brossard.ca/services/aide-au-lecteur/reponseatout-ca"
+                    class="footer__nav__link">Communiquez avec nous</a></li>
+            <li class="footer__nav__item"><a href="https://bibliotheque.brossard.ca/foire-aux-questions"
+                    class="footer__nav__link">Foire aux questions</a></li>
+            <li class="footer__nav__item"><a href="https://www.brossard.ca/conditions-d-utilisation"
+                    class="footer__nav__link">Conditions d'utilisation</a></li>
+            <li class="footer__nav__item"><a href="https://bibliotheque.brossard.ca/plan-du-site"
+                    class="footer__nav__link">Plan du site</a></li>
+        </ul>
+    </nav>
+    <section class="footer__social">
+        <div class="footer__partner">
+            <a href="https://bibliotheque.brossard.ca/espaces/espace-bouvry" class="footer__partner__logo__link"><img src="{% static 'images/EspaceBouvry.png' %}"
+                    alt="Espace Bouvry" class="footer__partner__logo"></a>
+            <a href="https://bibliotheque.brossard.ca/espaces/espace-plus" class="footer__partner__logo__link"><img src="{% static 'images/EspacePlus.png' %}"
+                    alt="Espace Plus" class="footer__partner__logo"></a>
+            <a href="https://bibliotheque.brossard.ca/espaces/fab-lab" class="footer__partner__logo__link"><img src="{% static 'images/FabLab.png' %}" alt="Fab Lab"
+                    class="footer__partner__logo"></a>
+            <a href="https://bibliotheque.brossard.ca/espaces/soda" class="footer__partner__logo__link"><img src="{% static 'images/EspaceSoda.png' %}"
+                    alt="Espace Soda" class="footer__partner__logo"></a>
+        </div>
+
+        <section class="footer__media">
+            <div class="footer__media__social">
+                <a href="https://www.facebook.com/bibliobrossard" class="footer__media__social__link"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="https://twitter.com/Bibliobrossard" class="footer__media__social__link"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.pinterest.com/bibliobrossard/" class="footer__media__social__link"><i class="fab fa-pinterest-p fa-lg"></i></a>
+                <a href="https://www.flickr.com/photos/biblio_brossard/" class="footer__media__social__link"><i class="fab fa-flickr fa-lg"></i></a>
+                <a href="https://www.youtube.com/user/bibliobrossard" class="footer__media__social__link"><i class="fab fa-youtube fa-lg"></i></a>
+                <!-- FIXME: Ajouter history Pin qui n'est pas dispo sur Font Awesome -->
+            </div>
+            <p class="footer__media__social__appel">Suivez-nous</p>
+        </section>
+    </section>
+</div>
+<div class="footer__copyright">
+    <p>© 2020 Tous droits réservés Ville de Brossard / Bibliothèque de Brossard Georgette-Lepage.</p>
+</div>
+</footer>

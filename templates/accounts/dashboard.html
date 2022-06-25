@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    <div class="content__block">
+        {% include '_alerts.html' %}
+        <h1 class="title-1">Tableau de bord</h1>
+        <h2 class="title-2">Vos informations</h2>
+        <p class="paragraph"><strong>Prénom :</strong> {{ patron.first_name }}</p>
+        <p class="paragraph"><strong>Nom de famille :</strong> {{ patron.last_name }}</p>
+        <p class="paragraph"><strong>Identifiant :</strong> {{ patron.username }}</p>
+        <p class="paragraph"><strong>Adresse courriel :</strong> {{ patron.email }}</p>
+        <a href="{% url 'change_password' %}">Modifier votre mot de passe</a>
+
+        <h2 class="title-2">Badge{{ badges|pluralize }}</h2>
+         {% for badge in badges %}
+            {%  if badge.badges__name == None %}
+                <p class="paragraph">Vous n'avez présentement aucun badge</p>
+            {% else %}
+        <img src="/media/{{badge.badges__badge_picture }}" alt="{{ badge.badges__name }}" width="150px" height="150px">
+            {% endif %}
+        {% endfor %}
+
+        <h2 class="title-2">Réservation{{ reservations|pluralize }} à venir</h2>
+        <div class='cards'>
+            {% for reservation in reservations %}
+            <div class="card">
+                <div class="card__content">
+                    <h5 class="card__content__title">{{ reservation.machineID.name }}</h5>
+                    <p class="card__content__text">{{ reservation.type_reservation }}</p>
+                    <p class="card__content__text">{{ reservation.date | date:"D d M Y" }}</p>
+                    <p class="card__content__text">{{ reservation.starting_hours | time:"G:i" }} -
+                        {{ reservation.finishing_hours | time:"G:i" }}</p>
+                    <form action="{% url 'dashboard' %}" method="POST" class="js-form-confirmation">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ reservation.id }}">
+                        <button class="btn btn-red" type="submit">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="content__block__sides">
+
+        <div class="content__block">
+            <h1 class="title-1">Système de réservation du Fab Lab de la bibliothèque de Brossard</h1>
+            <p class="paragraph">Bienvenue sur la plateforme de réservation du Fab Lab. Voici ce qu'il faut savoir pour
+                accéder au Fab Lab: </p>
+            <ul>
+                <li class="paragraph__list">Vous devez obligatoirement vous inscrire à la plateforme pour réserver un
+                    équipement. Pour ce faire, allez à la <a href="{% url 'register' %}">page d'inscription.</a></li>
+                <li class="paragraph__list">Vous devez suivre une formation avant de pouvoir utiliser librement une
+                    machine.</li>
+                <li class="paragraph__list">Les usagers doivent être âgés de 13 ans et plus. Les enfants de moins de 9 ans
+                    doivent être accompagnés d'un adulte.</li>
+                <li class="paragraph__list">Pour plus d'informations sur le Fab Lab, consultez la page <a
+                        href="https://bibliotheque.brossard.ca/espaces/fab-lab/a-propos">à propos</a>.</li>
+            </ul>
+        </div>
+
+        <div class="content__block">
+            <h2 class="title-2">Connexion</h2>
+            {% include '_alerts.html' %}
+            <form method="POST" action="{% url 'login' %}" class="form">
+                {% csrf_token %}
+                <div class="form__group">
+                    {{ loginForm.username }}
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    {{ loginForm.username.label_tag }}
+                </div>
+                <div class="form__group">
+                    {{ loginForm.password }}
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    {{ loginForm.password.label_tag }}
+                </div>
+                <button type="submit" class="btn">Se connecter</button>
+                <a href="{% url 'register' %}" class="register__link">Pas encore inscrit?</a>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

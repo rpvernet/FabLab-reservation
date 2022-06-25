@@ -1,0 +1,17 @@
+.alert {
+    width: 100%;
+    text-align: center;
+    font: 1.6rem 'Roboto', sans-serif;
+    padding: 1rem;
+    margin: 1rem 0;
+
+    &-danger {
+        @extend .alert;
+        @include message_color(red);
+    }
+
+    &-success {
+        @extend .alert;
+        @include message_color($light-green);
+    }
+}

@@ -1,0 +1,83 @@
+{% load static %}
+{% include 'supnavbar.html' %}
+<div class="navbar">
+  <a href="{% url 'index' %}"><img class="navbar__logo" src="{% static 'images/logo.jpg' %}" alt="Logo de la ville"></a>
+  <ul class="navbar__links">
+    <div class="navbar__dropdown">
+      <li class="navbar__link navbar__dropdown__button">Catalogue</li>
+      <div class="navbar__dropdown__items">
+        <a href="https://bibliotheque.brossard.ca/recherche-simple">Recherche simple</a>
+        <a href="https://bibliotheque.brossard.ca/advancedsearch/:new">Recherche avancée</a>
+        <a href="https://bibliotheque.brossard.ca/aide-au-catalogue">Aide au catalogue</a>
+      </div>
+    </div>
+
+    <div class="navbar__dropdown">
+      <li class="navbar__link navbar__dropdown__button">À Propos</li>
+      <div class="navbar__dropdown__items">
+        <a href="https://bibliotheque.brossard.ca/a-propos/renseignements-utiles">Renseignements utiles</a>
+        <a href="https://bibliotheque.brossard.ca/search/73f8537f-6aba-4962-ba1e-bcb3702c7da2/N-438d1de4-50e7-49c2-8bf9-5fcbdd62392c">Actualités</a>
+        <a href="https://bibliotheque.brossard.ca/a-propos/infolettre">Infolettre</a>
+        <a href="https://bibliotheque.brossard.ca/a-propos/mission">Mission</a>
+        <a href="https://bibliotheque.brossard.ca/a-propos/partenaires">Partenaires</a>
+        <a href="https://bibliotheque.brossard.ca/a-propos/amis-de-la-bibliotheque">Amis de la bibliothèque</a>
+        <a href="https://bibliotheque.brossard.ca/a-propos/histoire">Histoire</a>
+        <a href="https://bibliotheque.brossard.ca/a-propos/renseignements-utiles/trajet-pour-se-rendre-a-la-bibliotheque">Trajet pour se rendre à la bibliothèque</a>
+      </div>
+    </div>
+
+    <div class="navbar__dropdown">
+      <li class="navbar__link navbar__dropdown__button">Services</li>
+      <div class="navbar__dropdown__items">
+        <a href="https://bibliotheque.brossard.ca/account">Mon dossier</a>
+        <a href="https://bibliotheque.brossard.ca/services/acces-aux-services-en-ligne">Accès aux services en ligne</a>
+        <a href="https://bibliotheque.brossard.ca/services/abonnement-et-pret/sabonner">S'abonner</a>
+        <a href="https://bibliotheque.brossard.ca/services/aide-au-lecteur">Aide au lecteur</a>
+        <a href="https://bibliotheque.brossard.ca/services/reservation-et-suggestions-dachat">Réservation et suggestions d'achat</a>
+        <a href="https://bibliotheque.brossard.ca/services/informatique">Informatique</a>
+        <a href="https://bibliotheque.brossard.ca/services/salles-de-travail">Salles de travail</a>
+        <a href="https://bibliotheque.brossard.ca/services/enfants">Enfants</a>
+        <a href="https://bibliotheque.brossard.ca/services/adultes">Adultes</a>
+        <a href="https://bibliotheque.brossard.ca/services/interculturel">Interculturel</a>
+      </div>
+    </div>
+
+    <div class="navbar__dropdown">
+      <li class="navbar__link navbar__dropdown__button">Activités</li>
+      <div class="navbar__dropdown__items">
+        <a href="https://bibliotheque.brossard.ca/activites/enfants">Enfants</a>
+        <a href="https://bibliotheque.brossard.ca/search/31c2cd5d-cf3c-4f36-ab36-6d415dd1fba9/N-0b64200e-5be5-4bcc-baa5-d20ec5277a13">Adolescents</a>
+        <a href="https://bibliotheque.brossard.ca/adultes">Adultes</a>
+        <a href="https://bibliotheque.brossard.ca/activites/interculturelles">Interculturelles</a>
+        <a href="https://bibliotheque.brossard.ca/search/970b32f0-ff7e-4e92-96f2-658efb17610c/N-c7cc3b9c-3ccc-47ef-8988-8b4b51722182">Toutes les activités</a>
+        <a href="https://bibliotheque.brossard.ca/activites/proposez-votre-conference">Proposez votre conférence!</a>
+        <a href="https://bibliotheque.brossard.ca/activites/depliant-activites">Dépliant activités</a>
+      </div>
+    </div>
+
+      <div class="navbar__dropdown">
+        <li class="navbar__link navbar__dropdown__button">Collections</li>
+        <div class="navbar__dropdown__items">
+          <a href="https://bibliotheque.brossard.ca/notre-collection">Notre collection</a>
+          <a href="https://bibliotheque.brossard.ca/documents-populaires">Documents populaires</a>
+          <a href="https://bibliotheque.brossard.ca/collections/collections-numeriques">Collections numériques</a>
+          <a href="https://bibliotheque.brossard.ca/collections/dons-de-livres-et-magazines">Dons de livres et de magazines</a>
+        </div>
+      </div>
+
+        <div class="navbar__dropdown">
+          <li class="navbar__link navbar__dropdown__button">Espaces</li>
+          <div class="navbar__dropdown__items">
+            <a href="https://bibliotheque.brossard.ca/espaces/fab-lab">Fab Lab</a>
+            <a href="https://bibliotheque.brossard.ca/espaces/soda">Soda</a>
+            <a href="https://bibliotheque.brossard.ca/espaces/espace-bouvry">Espace Bouvry</a>
+            <a href="https://bibliotheque.brossard.ca/espaces/espace-plus">Espace PLUS</a>
+          </div>
+        </div>
+    </div>
+    
+
+  </ul>
+  {% include 'burgernav.html' %}
+</div>
+{% include 'fablabnavbar.html' %}

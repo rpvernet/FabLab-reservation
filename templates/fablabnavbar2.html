@@ -1,0 +1,66 @@
+{% load static %}
+<div class="fablabnavbar">
+  <span class="fablabnavbar__link fablabnavbar__link__menu hidden-js">Menu Fab Lab<i class="material-icons">
+    keyboard_arrow_down
+    </i></span>
+  <ul class="fablabnavbar__links">
+    <div class="fablabnavbar__dropdown">
+      <li class="fablabnavbar__link fablabnavbar__dropdown__button">
+          <a class="test" href="#">Réserver<i class="material-icons">
+        keyboard_arrow_down
+          </i></a>
+
+      <div class="fablabnavbar__dropdown__items">
+
+        {% for category in category_nav %}
+            <div class="fablabnavbar__dropdown">
+            <li class="fablabnavbar__link fablabnavbar__dropdown__button">
+                <a class="test" href="#" >{{ category }}<i class="material-icons">
+        keyboard_arrow_down
+        </i></a>
+            <ul class="dropdown-submenu">
+            <div class="fablabnavbar__dropdown__items">
+            {%  for machine in machines_nav %}
+                {% if machine.category == category %}
+                    <li><a href="{% url 'reservations' %}{{ machine.id }}" class="fablabnavbar__link">{{ machine.name }}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            </li>
+        {% endfor %}
+
+
+        {% for machine in machines_nav %}
+            {%  if machine.category == None %}
+        <a href="{% url 'reservations' %}{{ machine.id }}">{{ machine.name }}</a>
+            {% endif %}
+        {% endfor %}
+
+      </li>
+    </div>
+    <li><a href="{% url 'machines' %}" class="fablabnavbar__link">Machines</a></li>
+
+    {% if user.is_authenticated %}
+    <li><a href="{% url 'dashboard' %}" class="fablabnavbar__link">Tableau de bord</a></li>
+    <li><a href="javascript:{document.getElementById('logout').submit()}" class="fablabnavbar__link">Déconnexion</a>
+      <form action="{% url 'logout' %}" method="POST" id="logout">
+        {% csrf_token %}
+        <input type="hidden">
+      </form> 
+    </li>
+    {% else %}
+    <li><a href="{% url 'login' %}" class="fablabnavbar__link">Connexion</a></li>
+    <li><a href="{% url 'register' %}" class="fablabnavbar__link">Inscription</a></li>
+    {% endif %}
+  </ul>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>

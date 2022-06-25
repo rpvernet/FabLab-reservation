@@ -1,0 +1,42 @@
+.btn {
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: $blue;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+    transform 150ms ease;
+
+    // Pour descendre le bouton dans la page machine
+    display: block;
+
+    &:hover,
+    &:focus {
+        background: lighten($blue, 30%);
+        outline: 0;
+    }
+
+    &:active {
+        transform: scale(0.99);
+    }
+
+    &-red {
+        background-color: red;
+
+        &:hover,
+        &:focus {
+            background: lighten(red, 30%);
+            outline: 0;
+        }
+    
+        &:active {
+            transform: scale(0.99);
+        }
+
+    }
+}

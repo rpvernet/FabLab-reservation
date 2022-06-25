@@ -1,0 +1,9 @@
+location /static/ {
+  alias /home/FabLab-reservation/web/staticfiles/;
+  add_header Access-Control-Allow-Origin *;
+}
+
+location /media/ {
+  alias /home/FabLab-reservation/web/mediafiles/;
+  add_header Access-Control-Allow-Origin *;
+}

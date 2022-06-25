@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="calendar_page">
+    <div class = 'hour_day'>
+    <h1 class="calendar_title"> Heures</h1>
+    {% for hour in today_time %}
+    <div class="reservation_hour">
+        <p><strong>{{ hour|time:"H:i"}}</strong></p>
+
+    </div>
+
+    {% endfor %}
+     </div>
+    {% for machine in today_machine %}
+        <div class= "machine_day" >
+    <h1 class="calendar_title">{{ machine.machineID__name }}</h1>
+        {% for hour in today_time %}
+            {% for reservation in today_reservation %}
+                {% if machine.machineID == reservation.machine_id and hour == reservation.hour and reservation.taken == 'yes' and reservation.counter == 1 %}
+
+                <div class="reservation_taken_first">
+                 <p><strong>{{ reservation.user}} </strong></p>
+                </div>
+                 {% elif machine.machineID == reservation.machine_id and hour == reservation.hour and reservation.taken == 'yes' %}
+                     <div class="reservation_taken">
+               <br>
+                </div>
+
+                 {% elif machine.machineID == reservation.machine_id and hour == reservation.hour and reservation.taken == 'no' %}
+                    <div class="reservation_free">
+
+                        <br>
+
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {%  endfor %}
+        </div>
+    {%  endfor %}
+    </div>
+
+    <meta http-equiv="refresh" content="30" />
+
+{% endblock %}
